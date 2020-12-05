@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="homeTextSize">22sp</dimen>
+    <dimen name="txzWeatherInfoTextSize">18sp</dimen>
+    <dimen name="homeTimeTextSize">80sp</dimen>
+    <dimen name="homeDataTextSize">18sp</dimen>
+    <dimen name="homeLayoutPaddingH">15dp</dimen>
+    <dimen name="homeLayoutPaddingV">30dp</dimen>
+</resources>

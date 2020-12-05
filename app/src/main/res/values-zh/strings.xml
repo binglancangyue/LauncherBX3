@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">桌面</string>
+    <string name="home_btn_service">云服务</string>
+    <string name="home_btn_navigation">导航</string>
+    <string name="home_btn_app">应用</string>
+    <string name="app_not_install">该应用尚未安装？</string>
+    <string name="home_btn_record">记录仪</string>
+</resources>

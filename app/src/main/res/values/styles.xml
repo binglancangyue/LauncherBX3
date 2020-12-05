@@ -1,0 +1,66 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="HomeImageViewStyle">
+        <item name="android:layout_marginBottom">18dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="HomeMusicImageViewStyle">
+        <item name="android:padding">15dp</item>
+        <item name="background">?android:attr/selectableItemBackground</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="HomeLayoutStyle">
+        <item name="android:orientation">vertical</item>
+        <item name="background">?android:attr/selectableItemBackground</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="HomeTextViewStyle">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/homeTextSize</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TXZWeatherInfoTextViewStyle">
+        <item name="android:textSize">@dimen/txzWeatherInfoTextSize</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="HomeTextStyle">
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+        <item name="android:textSize">@dimen/homeTextSize</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@null</item>
+        <!--        <item name="android:windowTranslucentStatus">false</item>-->
+        <!--        <item name="android:windowTranslucentNavigation">true</item>-->
+        <!--        &lt;!&ndash;Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色&ndash;&gt;-->
+        <!--        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent-->
+        <!--        </item>-->
+    </style>
+
+</resources>

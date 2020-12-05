@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LauncherBX3</string>
+    <string name="home_btn_service">Service</string>
+    <string name="home_btn_navigation">Navigation</string>
+    <string name="home_btn_app">APP</string>
+    <string name="app_not_install">The app is not installed!</string>
+    <string name="home_btn_record">DVR</string>
+</resources>
