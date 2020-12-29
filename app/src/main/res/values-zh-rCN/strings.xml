@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">桌面</string>
+    <string name="home_btn_service">云服务</string>
+    <string name="home_btn_navigation">导航</string>
+    <string name="home_btn_app">应用</string>
+    <string name="app_not_install">该应用尚未安装？</string>
+    <string name="home_btn_record">记录仪</string>
+    <string name="settings_park_time">请选择停车监控支持时间</string>
+    <string name="settings_park_time_8">8小时</string>
+    <string name="settings_park_time_16">16小时</string>
+    <string name="settings_park_time_24">24小时</string>
+    <string name="settings_park_time_48">48小时</string>
+    <string name="settings_park_time_always">一直</string>
+    <string name="cancel">取消</string>
+    <string name="playback_t10">视频回放</string>
+    <string name="maps_t10">maps</string>
+
+    <string name="cloud_t10"><![CDATA[<b><font>云服务</font></b>]]></string>
+    <string name="dvr_t10"><![CDATA[<b><font>记录仪</font></b>]]></string>
+    <string name="fm_t10"><![CDATA[<b><font>FM</font></b>]]></string>
+    <string name="map_t10"><![CDATA[<b><font>导航</font></b>]]></string>
+    <string name="music_t10"><![CDATA[<b><font>音乐</font></b>]]></string>
+    <string name="app_t10"><![CDATA[<b><font>应用</font></b>]]></string>
+
+</resources>

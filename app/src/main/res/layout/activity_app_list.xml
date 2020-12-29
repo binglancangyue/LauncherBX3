@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/icon_home_bg"
+    android:background="@drawable/icon_t10_app_list_bg"
     android:overScrollMode="never"
     android:paddingTop="20dp"
     android:scrollbars="none"

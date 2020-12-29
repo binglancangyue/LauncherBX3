@@ -26,5 +26,8 @@ public class WeatherReceiver extends BroadcastReceiver {
             String weather = intent.getStringExtra("weatherInfo");
             CallBackManagement.getInstance().updateWeather(weather);
         }
+        if (action.equals(Customer.ACTION_SHOW_SETTING_WINDOW)) {
+            CallBackManagement.getInstance().updateWeather("123");
+        }
     }
 }

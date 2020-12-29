@@ -5,4 +5,21 @@
     <string name="home_btn_app">APP</string>
     <string name="app_not_install">The app is not installed!</string>
     <string name="home_btn_record">DVR</string>
+    <string name="camera_t10">Camera</string>
+
+    <string name="settings_park_time">Please select stop monitoring support time</string>
+    <string name="settings_park_time_8">8h</string>
+    <string name="settings_park_time_16">16h</string>
+    <string name="settings_park_time_24">24h</string>
+    <string name="settings_park_time_48">48h</string>
+    <string name="settings_park_time_always">all the time</string>
+    <string name="cancel">Cancel</string>
+    <string name="playback_t10">playback</string>
+    <string name="maps_t10">maps</string>
+    <string name="cloud_t10"><![CDATA[<b><font>Cloud</font></b><br>playback</br>]]></string>
+    <string name="dvr_t10"><![CDATA[<b><font>Camera</font></b><br>DVR</br>]]></string>
+    <string name="fm_t10"><![CDATA[<b><font>FM</font></b>]]></string>
+    <string name="map_t10"><![CDATA[<b><font>Google</font></b><br>maps</br>]]></string>
+    <string name="music_t10"><![CDATA[<b><font>Music</font></b>]]></string>
+    <string name="app_t10"><![CDATA[<b><font>APP</font></b>]]></string>
 </resources>

@@ -1,17 +1,23 @@
 package com.bixin.launcher.launcherbx3.view;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -173,6 +179,8 @@ public class LauncherHomeActivity extends BaseActivity implements View.OnClickLi
                 break;
         }
     }
+
+    private static final String SELECT_PARK_TIME = "select_park_time";
 
     @Override
     public void gpsSpeedChanged() {
@@ -344,5 +352,6 @@ public class LauncherHomeActivity extends BaseActivity implements View.OnClickLi
         mActivityTool.startVoiceRecognitionService();
         mActivityTool.startRCX();
     }
+
 
 }

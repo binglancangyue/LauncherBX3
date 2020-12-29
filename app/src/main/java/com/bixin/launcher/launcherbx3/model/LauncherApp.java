@@ -108,7 +108,10 @@ public class LauncherApp extends Application {
     private boolean ignoreApp(String pkgName) {
         if (pkgName.equals("com.bixin.launcher.launcherbx3")
                 || pkgName.equals("com.bixin.speechrecognitiontool")
-                || pkgName.equals("com.txznet.adapter")) {
+                || pkgName.equals("com.txznet.adapter")
+                || pkgName.equals(Customer.PACKAGE_NAME_SOHU)
+                || pkgName.equals(Customer.PACKAGE_NAME_AUTONAVI)
+                ||pkgName.equals("com.android.contacts")) {
             return false;
         }
         return true;

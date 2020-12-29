@@ -23,11 +23,13 @@ public class Customer {
     public final static String PACKAGE_NAME_RCX = "com.mapgoo.diruite";
     public final static String PACKAGE_NAME_RCX_DVR = "com.mapgoo.media.dvrx";
     public final static String PACKAGE_NAME_RADIO = "cn.kuwo.tingshucar";
+    public static final String SELECT_PARK_TIME = "select_park_time";
+    public static final String PACKAGE_NAME_MAPSLITE = "com.google.android.apps.mapslite"; //mapslite
 
 
-    public final static String ACTION_GET_WEATHER = "com.bixin.speechrecognitiontool.action_get_weather";
-    public final static String ACTION_UPDATE_WEATHER = "com.bixin.speechrecognitiontool.action_update_weather";
+    public static final String ACTION_GET_WEATHER = "com.bixin.speechrecognitiontool.action_get_weather";
+    public static final String ACTION_UPDATE_WEATHER = "com.bixin.speechrecognitiontool.action_update_weather";
     public static final String ACTION_SHOW_SETTING_WINDOW = "com.android.systemui.show_setting_window";
-
+    private static final String ACTION_SHOW_TIME_DIALOG = "com.bixin.action.show_time_dialog";
 
 }

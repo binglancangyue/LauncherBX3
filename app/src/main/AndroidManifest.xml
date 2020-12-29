@@ -44,7 +44,7 @@
         android:supportsRtl="true"
         android:theme="@style/TranslucentTheme">
         <activity
-            android:name=".view.LauncherHomeActivity"
+            android:name=".view.T10LaunchHomeActivity"
             android:clearTaskOnLaunch="true"
             android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
             android:launchMode="singleTask"
@@ -62,7 +62,7 @@
         </activity>
 
         <activity android:name=".view.AppListActivity" />
-
+<!--        <activity android:name=".view.T10LaunchHomeActivity"/>-->
     </application>
 
 </manifest>
