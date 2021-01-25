@@ -66,7 +66,7 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
         mHandle = new InnerHandler(this);
         registerDVRContentObserver();
         mHandle.sendEmptyMessageDelayed(2, 5000);
-        mHandle.sendEmptyMessageDelayed(3,100000);
+        mHandle.sendEmptyMessageDelayed(3,10000);
     }
 
     @Override
@@ -334,7 +334,6 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
             }
         }
     }
-
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
