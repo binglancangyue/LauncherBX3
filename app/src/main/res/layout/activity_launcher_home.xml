@@ -89,7 +89,7 @@
                 android:id="@+id/tv_weather"
                 style="@style/TXZWeatherInfoTextViewStyle"
                 android:layout_marginTop="5dp"
-                android:text="晴天 25°"
+                android:text="25°"
                 app:layout_constraintBottom_toBottomOf="@id/tc_data"
                 app:layout_constraintLeft_toLeftOf="@id/iv_weather"
                 app:layout_constraintRight_toRightOf="@id/iv_weather" />
@@ -173,7 +173,7 @@
             android:gravity="center"
             android:marqueeRepeatLimit="-1"
             android:singleLine="true"
-            android:text="音乐"
+            android:text="@string/title_music"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@id/iv_music_pre"

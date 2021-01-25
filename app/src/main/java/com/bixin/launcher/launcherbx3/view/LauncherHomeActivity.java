@@ -195,7 +195,12 @@ public class LauncherHomeActivity extends BaseActivity implements View.OnClickLi
         String cityName = weatherBean.getCityName();
         String weather = weatherBean.getWeather();
         tvCurrentCity.setText(cityName);
-        String weatherInfo = weather + "  " + weatherBean.getCurrentTemperature() + "°";
+        String weatherInfo;
+        if (Customer.IS_ENGLISH_VERSION) {
+            weatherInfo = weatherBean.getCurrentTemperature() + "°";
+        } else {
+            weatherInfo = weather + "  " + weatherBean.getCurrentTemperature() + "°";
+        }
         tvWeather.setText(weatherInfo);
         ivWeatherIcon.setImageResource(mActivityTool.getWeatherIcon(weather));
     }

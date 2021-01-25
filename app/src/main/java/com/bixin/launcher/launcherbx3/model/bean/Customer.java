@@ -24,10 +24,10 @@ public class Customer {
     public final static String PACKAGE_NAME_RCX_DVR = "com.mapgoo.media.dvrx";
     public final static String PACKAGE_NAME_RADIO = "cn.kuwo.tingshucar";
 
-
     public final static String ACTION_GET_WEATHER = "com.bixin.speechrecognitiontool.action_get_weather";
     public final static String ACTION_UPDATE_WEATHER = "com.bixin.speechrecognitiontool.action_update_weather";
     public static final String ACTION_SHOW_SETTING_WINDOW = "com.android.systemui.show_setting_window";
 
+    public static final boolean IS_ENGLISH_VERSION = true;
 
 }
