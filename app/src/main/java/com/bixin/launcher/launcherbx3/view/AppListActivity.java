@@ -2,6 +2,7 @@ package com.bixin.launcher.launcherbx3.view;
 
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -131,6 +132,14 @@ public class AppListActivity extends BaseActivity implements OnRecyclerViewItemL
     public void onItemClickListener(int position, String packageName) {
         Log.d(TAG, "onItemClickListener packageName: " + packageName);
         mActivityTools.launchAppByPackageName(packageName, "null");
+    }
+
+    @Override
+    public void onItemLongClickListener(int position, String packageName) {
+        Log.d(TAG, "onItemLongClickListener packageName: " + packageName);
+        Uri uri = Uri.fromParts("package", packageName, null);
+        Intent intent = new Intent(Intent.ACTION_DELETE, uri);
+        startActivity(intent);
     }
 
     @Override

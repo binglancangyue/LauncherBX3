@@ -1,8 +1,10 @@
 package com.bixin.launcher.launcherbx3.view;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.DialogInterface;
-import android.content.res.Configuration;
+import android.content.Intent;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +12,7 @@ import android.os.Message;
 import android.provider.Settings;
 import android.text.Html;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -22,7 +25,9 @@ import com.bixin.launcher.launcherbx3.R;
 import com.bixin.launcher.launcherbx3.model.bean.Customer;
 import com.bixin.launcher.launcherbx3.model.listener.OnLocationListener;
 import com.bixin.launcher.launcherbx3.model.tools.StartActivityTool;
+import com.bixin.launcher.launcherbx3.model.tools.StoragePaTool;
 
+import java.io.File;
 import java.lang.ref.WeakReference;
 
 import static android.content.ContentValues.TAG;
@@ -60,6 +65,8 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
         mStartActivityTool = new StartActivityTool();
         mHandle = new InnerHandler(this);
         registerDVRContentObserver();
+        mHandle.sendEmptyMessageDelayed(2, 5000);
+        mHandle.sendEmptyMessageDelayed(3,100000);
     }
 
     @Override
@@ -106,7 +113,7 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
                 mStartActivityTool.launchAppByPackageName(Customer.PACKAGE_NAME_FM);
                 break;
             case R.id.fl_map:
-                mStartActivityTool.launchAppByPackageName(Customer.PACKAGE_NAME_MAPSLITE);
+                mStartActivityTool.launchAppByPackageName(Customer.PACKAGE_NAME_MAPS);
                 break;
             case R.id.fl_music:
                 mStartActivityTool.launchAppByPackageName("com.spotify.music");
@@ -284,11 +291,59 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
             super.handleMessage(msg);
             if (msg.what == 0) {
                 activity.isShowRecordIcon();
-                removeMessages(msg.what);
+            }
+            if (msg.what == 2) {
+                activity.startDVRService();
+            }
+            if (msg.what == 3){
+                activity.startValidationTools();
+            }
+            removeMessages(msg.what);
+        }
+    }
+
+    @SuppressLint("NewApi")
+    private void startDVRService() {
+        Intent launchIntent = mContext.getPackageManager()
+                .getLaunchIntentForPackage(Customer.PACKAGE_NAME_DVR);
+        if (launchIntent == null) {
+            mHandle.sendEmptyMessageDelayed(2, 1000);
+        } else {
+            mContext.startActivity(launchIntent);
+        }
+    }
+
+    public void startValidationTools() {
+        if (!Customer.IS_START_TEST_APP) {
+            return;
+        }
+        String path = StoragePaTool.getStoragePath(true);
+        Log.d(TAG, "startValidationTools: " + path);
+        if (path != null) {
+            path = path + "/BixinTest";
+            File file = new File(path);
+            if (file.exists()) {
+                Intent intent = new Intent();
+                ComponentName cn = new ComponentName("com.sprd.validationtools",
+                        "com.sprd.validationtools.ValidationToolsMainActivity");
+                intent.setComponent(cn);
+                mContext.startActivity(intent);
+                Log.d(TAG, "startValidationTools: OK");
+            } else {
+                Log.d(TAG, "startValidationTools: !exists");
             }
         }
     }
 
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.e(TAG, "onKeyDown: keyCode " + keyCode);
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
