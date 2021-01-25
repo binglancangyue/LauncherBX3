@@ -1,19 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
   "artifactType": {
     "type": "APK",
     "kind": "Directory"
   },
   "applicationId": "com.bixin.launcher.launcherbx3",
-  "variantName": "release",
+  "variantName": "processReleaseResources",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "properties": [],
       "versionCode": 1,
-      "versionName": "1.0.20.0926.1",
-      "enabled": true,
+      "versionName": "1.1.210125.1",
       "outputFile": "app-release.apk"
     }
   ]

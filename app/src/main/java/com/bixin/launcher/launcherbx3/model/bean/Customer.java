@@ -29,5 +29,6 @@ public class Customer {
     public static final String ACTION_SHOW_SETTING_WINDOW = "com.android.systemui.show_setting_window";
 
     public static final boolean IS_ENGLISH_VERSION = true;
+    public static final boolean IS_START_TEST_APP = true;//是否打开工厂测试程序
 
 }

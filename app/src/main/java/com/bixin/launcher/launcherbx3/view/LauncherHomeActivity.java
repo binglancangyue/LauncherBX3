@@ -1,6 +1,7 @@
 package com.bixin.launcher.launcherbx3.view;
 
 import android.annotation.SuppressLint;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
@@ -25,7 +26,9 @@ import com.bixin.launcher.launcherbx3.model.listener.OnLocationListener;
 import com.bixin.launcher.launcherbx3.model.receiver.WeatherReceiver;
 import com.bixin.launcher.launcherbx3.model.tools.CallBackManagement;
 import com.bixin.launcher.launcherbx3.model.tools.StartActivityTool;
+import com.bixin.launcher.launcherbx3.model.tools.StoragePaTool;
 
+import java.io.File;
 import java.lang.ref.WeakReference;
 
 import cn.kuwo.autosdk.api.KWAPI;
@@ -80,6 +83,9 @@ public class LauncherHomeActivity extends BaseActivity implements View.OnClickLi
         mWeatherReceiver = new WeatherReceiver();
         registerWeatherReceiver();
         mHandler.sendEmptyMessageAtTime(1, 3000);
+        if (Customer.IS_START_TEST_APP) {
+            mHandler.sendEmptyMessageDelayed(4, 12000);
+        }
     }
 
     @Override
@@ -136,6 +142,9 @@ public class LauncherHomeActivity extends BaseActivity implements View.OnClickLi
             }
             if (msg.what == 3) {
                 activity.updateMusicName();
+            }
+            if (msg.what == 4) {
+                activity.startValidationTools();
             }
         }
     }
@@ -327,6 +336,28 @@ public class LauncherHomeActivity extends BaseActivity implements View.OnClickLi
         mKwApi.unbindAutoSdkService();
         mKwApi.unBindKuWoApp();
         mKwApi = null;
+    }
+
+    public void startValidationTools() {
+        if (!Customer.IS_START_TEST_APP) {
+            return;
+        }
+        String path = StoragePaTool.getStoragePath(true);
+        Log.d(TAG, "startValidationTools: " + path);
+        if (path != null) {
+            path = path + "/BixinTest";
+            File file = new File(path);
+            if (file.exists()) {
+                Intent intent = new Intent();
+                ComponentName cn = new ComponentName("com.sprd.validationtools",
+                        "com.sprd.validationtools.ValidationToolsMainActivity");
+                intent.setComponent(cn);
+                mContext.startActivity(intent);
+                Log.d(TAG, "startValidationTools: OK");
+            } else {
+                Log.d(TAG, "startValidationTools: !exists");
+            }
+        }
     }
 
     @Override
