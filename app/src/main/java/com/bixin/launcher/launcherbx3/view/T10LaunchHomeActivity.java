@@ -107,7 +107,7 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
                 mStartActivityTool.launchAppByPackageName(Customer.PACKAGE_NAME_DVR);
                 break;
             case R.id.fl_cloud:
-//                mStartActivityTool.launchAppByPackageName(Customer.PACKAGE_NAME_ViDEO_PLAY_BACK);
+                mStartActivityTool.launchAppByPackageName(Customer.PACKAGE_NAME_ViDEO_PLAY_BACK);
                 break;
             case R.id.fl_fm:
                 mStartActivityTool.launchAppByPackageName(Customer.PACKAGE_NAME_FM);
