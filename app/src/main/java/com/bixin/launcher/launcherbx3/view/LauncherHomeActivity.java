@@ -46,7 +46,6 @@ import cn.kuwo.base.bean.Music;
  */
 public class LauncherHomeActivity extends BaseActivity implements View.OnClickListener,
         OnLocationListener {
-    private final static String TAG = LauncherHomeActivity.class.getName();
     private StartActivityTool mActivityTool;
     private WeatherBean weatherBean;
     private ImageView ivWeatherIcon;
@@ -243,32 +242,31 @@ public class LauncherHomeActivity extends BaseActivity implements View.OnClickLi
     public void initKwApi() {
         if (mKwApi == null) {
             mKwApi = KWAPI.createKWAPI(mContext, "auto");
-        }
-
-        mKwApi.registerEnterListener(new OnEnterListener() {
-            @Override
-            public void onEnter() {
-                mKwApi.bindAutoSdkService();
-                Log.d(TAG, "应用启动收到了");
-            }
-        });
-        mKwApi.registerExitListener(new OnExitListener() {
-            @Override
-            public void onExit() {
-                mKwApi.unbindAutoSdkService();
-            }
-        });
-        //注册获取播放状态的监听
-        mKwApi.registerPlayerStatusListener(new OnPlayerStatusListener() {
-            @Override
-            public void onPlayerStatus(PlayerStatus arg0, Music music) {
-                if (music != null) {
-                    musicName = music.name;
+            mKwApi.registerEnterListener(new OnEnterListener() {
+                @Override
+                public void onEnter() {
+                    mKwApi.bindAutoSdkService();
+                    Log.d(TAG, "应用启动收到了");
                 }
-                Log.d(TAG, "onPlayerStatus:status " + arg0.name());
-                updateMusicStatus();
-            }
-        });
+            });
+            mKwApi.registerExitListener(new OnExitListener() {
+                @Override
+                public void onExit() {
+                    mKwApi.unbindAutoSdkService();
+                }
+            });
+            //注册获取播放状态的监听
+            mKwApi.registerPlayerStatusListener(new OnPlayerStatusListener() {
+                @Override
+                public void onPlayerStatus(PlayerStatus arg0, Music music) {
+                    if (music != null) {
+                        musicName = music.name;
+                    }
+                    Log.d(TAG, "onPlayerStatus:status " + arg0.name());
+                    updateMusicStatus();
+                }
+            });
+        }
     }
 
     /**

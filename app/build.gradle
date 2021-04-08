@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            storeFile file('E:\\AndroidStudioWork\\LauncherBX3\\LauncherBX3.jks')
+            storeFile file('E:\\AndroidStudioWork\\LauncherBX3\\release.keystore')
             storePassword '12345678'
             keyAlias 'LauncherBX3'
             keyPassword '12345678'
@@ -17,7 +17,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
-        versionName '1.1.210125.1'
+        versionName '1.1.210408.1'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
     }
@@ -48,7 +48,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    ndkVersion '22.0.7026061'
+    ndkVersion '22.1.7171670'
 }
 
 dependencies {

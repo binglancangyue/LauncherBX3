@@ -18,7 +18,7 @@ import io.reactivex.disposables.CompositeDisposable;
 public abstract class BaseActivity extends RxActivity {
     protected CompositeDisposable mDisposable;
     protected Context mContext;
-
+    protected final String TAG = getClass().getSimpleName();
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
