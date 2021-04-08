@@ -109,6 +109,7 @@ public class LauncherApp extends Application {
         if (pkgName.equals("com.bixin.launcher.launcherbx3")
                 || pkgName.equals("com.bixin.speechrecognitiontool")
                 || pkgName.equals("com.txznet.adapter")
+                || pkgName.equals("com.sigma_rt.totalcontrol")
                 || pkgName.equals(Customer.PACKAGE_NAME_SOHU)) {
             return false;
         }
