@@ -61,6 +61,7 @@ public class RecyclerGridViewAdapter extends RecyclerView.Adapter<RecyclerGridVi
         return position;
     }
 
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvAppName;
         ImageView ivAppIcon;

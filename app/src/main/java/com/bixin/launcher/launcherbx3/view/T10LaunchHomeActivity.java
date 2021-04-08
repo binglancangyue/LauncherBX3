@@ -99,6 +99,7 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
         flAPP.setOnClickListener(this);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -162,7 +163,6 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
             showSelectTimeDialog();
         }
     }
-
 
     private void showSelectTimeDialog() {
         if (selectTimeDialog == null) {
