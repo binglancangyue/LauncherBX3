@@ -8,6 +8,12 @@ android {
             keyAlias 'LauncherBX3'
             keyPassword '12345678'
         }
+        release_key {
+            storeFile file('E:\\AndroidStudioWork\\LauncherBX3\\release.keystore')
+            storePassword '12345678'
+            keyPassword '12345678'
+            keyAlias 'LauncherBX3'
+        }
     }
     compileSdkVersion 28
     buildToolsVersion '29.0.3'
@@ -17,7 +23,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 27
         versionCode 1
-        versionName '1.0.210310.1'
+        versionName '1.0.210421.1'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
     }

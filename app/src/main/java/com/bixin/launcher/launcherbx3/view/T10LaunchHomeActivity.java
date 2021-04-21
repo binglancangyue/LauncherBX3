@@ -3,9 +3,12 @@ package com.bixin.launcher.launcherbx3.view;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -67,6 +70,7 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
         registerDVRContentObserver();
         mHandle.sendEmptyMessageDelayed(2, 5000);
         mHandle.sendEmptyMessageDelayed(3,10000);
+        test();
     }
 
     @Override
@@ -333,6 +337,28 @@ public class T10LaunchHomeActivity extends BaseActivity implements View.OnClickL
                 Log.d(TAG, "startValidationTools: !exists");
             }
         }
+    }
+
+    private void test() {
+        mHandle.postDelayed(new Runnable() {
+            public void run() {
+                // 判断用户是否手动设置了定位模式
+                int mode = Settings.System.getInt(getContentResolver(), "location_mode_changed", 0); // 1 : has changed  0 : no change
+                // 去掉Improve location accuracy弹窗
+                ContentResolver localContentResolver = getContentResolver();
+                ContentValues localContentValues = new ContentValues();
+                localContentValues.put("name", "network_location_opt_in");
+                localContentValues.put("value", 1);
+                localContentResolver.insert(Uri.parse("content://com.google.settings/partner"), localContentValues);
+
+                if (mode == 0) { // user did not choose the location mode
+                    Settings.Secure.putInt(getContentResolver(),
+                            Settings.Secure.LOCATION_MODE,
+                            android.provider.Settings.Secure.LOCATION_MODE_HIGH_ACCURACY);
+//                    Settings.Secure.setLocationProviderEnabled(localContentResolver, "network", true);
+                }
+            }
+        }, 10000);   // 这里加延时是由于google的应用服务起来比较慢，起来之后会设置network_location_opt_in的值
     }
 
     @Override
